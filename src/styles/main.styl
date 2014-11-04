@@ -2,7 +2,7 @@
 
 // variables!
 
-primary = #00F3A5
+primary = #24e0f3
 
 slide_width = 640px
 slide_height = 480px
@@ -185,7 +185,7 @@ body
     color: rgba(0,0,0,0.5)
 
 h1
-  font-size: 72px
+  font-size: 65px
   font-weight: 600
   line-height: 82px
   letter-spacing: -2px
@@ -244,9 +244,13 @@ a
   width: 120px
   height: 120px
   border-radius: 120px
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.4)
   &--small
-    width: 70px
-    height: 70px
+    width: 80px
+    height: 80px
+
+.avatar-name
+  margin-top: 10px
 
 .logo
   background-position: center
@@ -255,41 +259,45 @@ a
     background-size: 25%
     background-image: url(../images/gulp.png)
 
-.gif
+.gif:before
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  content: ' '
+  z-index: -1
   background-size: cover
   background-position: center
   background-repeat: no-repeat
-  &--fight
+
+.gif
+  &--fight:before
     background-image: url(../images/gif/fight.gif)
-  &--omg-grunt
-    background-image: url(../images/gif/yeaa.gif)
-  &--omg-plugins
-    background-image: url(../images/gif/bubbles.gif)
-  &--cowboy-reaction
-    background-image: url(../images/gif/demitri.gif)
-  &--grunt-happy
-    background-image: url(../images/gif/neverending.gif)
-  &--well-done
-    background-image: url(../images/gif/slowclap.gif)
-  &--gulp
-    background-image: url(../images/gif/ryu.gif)
-  &--gulp-api
-    background-image: url(../images/gif/clap.gif)
-  &--no
-    background-image: url(../images/gif/no.gif)
-  &--thats-it
-    background-image: url(../images/gif/shigeru.gif)
-  &--vinyl
-    background-image: url(../images/gif/vinyl.gif)
-  &--wrong-question
-    background-image: url(../images/gif/no-answer.gif)
-  &--orchestrator
-    background-image: url(../images/gif/conductor.gif)
-    background-size: 160%
-    background-position: 50% -220px
-  &--anger
-    background-image: url(../images/gif/angry-amy.gif)
-  &--gulp-is-awesome
-    background-image: url(../images/gif/anchorman.gif)
-  &--future
-    background-image: url(../images/gif/future.gif)
+  &--frustration:before
+    background-image: url(../images/gif/frustration.gif)
+  &--code:before
+    background-image: url(../images/code.jpg)
+  &--eye:before
+    background-image: url(../images/gif/eye.gif)
+  &--twitter:before
+    background-image: url(../images/twitter.png)
+
+.tiny-subheader
+  font-size: 24px;
+  margin: 10px 0 20px 0;
+
+.blur:before
+  -webkit-filter: blur(3px)
+
+.blur2:before
+  -webkit-filter: blur(4px)
+
+.faded:before
+  opacity: 0.7
+
+.faded2:before
+  opacity: 0.1
+
+.image
+  height: 294px;

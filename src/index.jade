@@ -3,7 +3,7 @@ html
   head
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
-    title Build Wars: Gulp vs Grunt
+    title The Accessibility of Programming
 
     link(href='http://fonts.googleapis.com/css?family=Open+Sans:300,600', rel='stylesheet', type='text/css')
 
@@ -17,321 +17,247 @@ html
     article
 
       section
-        h1 Build Wars
-        h3
-          a(href='https://twitter.com/markdalgleish') @markdalgleish
+        h1 The Accessibility of Programming
+        span.tiny-subheader why is it so scary to learn?
         img.avatar.avatar--small(src='images/profile.jpg')
-
-      section.gif.gif--fight
-        h2 Gulp vs Grunt
-
-      section.light(data-bespoke-state='green')
-        h2 A brief history of Grunt
+        h3.avatar-name
+          a(href='https://twitter.com/markdalgleish') @likethemammal
 
       section
-        img.avatar(src='images/cowboy.jpg')
+        img.avatar(src='images/obama.jpg')
         br
         blockquote.
-          I realized that a task-based build tool with <strong>built-in, commonly used tasks</strong> was the approach that would work best for me
+          ...Don't just buy a new video game, <strong>make one</strong>. Don't just download the latest app, <strong>help design it</strong>. Don't just play on your phone, <strong>program it</strong>...No one's born a computer scientist...
         br
         p
-          a(href='https://twitter.com/cowboy') Ben Alman
+          a(href='http://www.barackobama.com/') Barack Obama
           br
-          small March 2012
+          small Dec 2013
 
-      section
-        h3 Single, global Grunt:
-        pre.language-bash
-          code.
-            $ npm install -g grunt
-
-      section
-        h3 Configuration over code
-        pre.language-javascript
-          code.
-              grunt.initConfig({
-                lint: {
-                  src: 'src/&lt;%= pkg.name %&gt;.js'
-                },
-                concat: {
-                  src: [
-                    '&lt;banner:meta.banner&gt;',
-                    '&lt;file_strip_banner:src/&lt;%= pkg.name %&gt;.js&gt;'
-                  ],
-                  dest: '&lt;%= pkg.name %&gt;.js'
-                }
-              });
-
-      section
-        h3 Built-in init task to get you started
-        pre.language-bash
-          code.
-            $ grunt init jquery
-
-      section
-        h2.bullet Kitchen sink
-        ul
-          li init
-          li concat
-          li lint
-          li min
-          li qunit
-          li server
-          li test
-          li watch
 
       section.light(data-bespoke-state='green')
-        h2.bullet Simple config
-        p.bullet Common build steps
-        p.bullet Designed for small libraries &amp; plugins
+        h2 Goals of this talk
+        p Why its so scary.
+        p How its not magic.
+        p How easy it can be.
 
-      section.gif.gif--omg-grunt
-        h1 OMG GRUNT
+      section.gif.gif--frustration.blur
+        h2 Starting in the wrong place
+        span PHP
+        span HTML
+        span Python
+        span Ruby
+        span Javascript
+        span Go
+        span Java
 
-      section.gif.gif--omg-plugins
-        h1 OMG GRUNT PLUGINS
+      section
+        h2 Why is learning so <strong>hard</strong>?
 
-      section.gif.gif--cowboy-reaction
+      section
+        h2 <strong>Its hard</strong> to get started
+        p Install
+        p Setup
+        p Assumptions
+        p Acronyms
+        p etc
+
+      section
+        h2 <strong>Its hard</strong> to practically apply what you've learned
+        p For Android development you need an Android device
+        p For Back-end development you need a server
+        p It doesnt have to be this hard.
 
       section.light(data-bespoke-state='green')
-        h2.bullet What was wrong?
-        ul
-          li Global 'grunt' command...
-          li Upgrading Grunt could break older projects
-          li Your new project might not build on old Grunt versions
-          li Grunt was really only designed for small projects
+        h2 Why is the front-end web a good place to start?
 
       section
-        h2.bullet Grunt v0.4
-        h3.bullet Released Feb 2013
-        ul
-          li grunt.js became Gruntfile.js
-          li 'init' task became 'grunt-init', inspired <a href="http://yeoman.io">Yeoman</a>
-          li Local Grunt install for each project
-          li Global 'grunt' command runs local Grunt
-          li Everything is a plugin, no built-in tasks
-
-      section.gif.gif--grunt-happy
-        h1
-          .bullet GRUNT 0.4
-          .bullet +
-          .bullet BOWER
-          .bullet +
-          .bullet YEOMAN
-
-      section.gif.gif--well-done
-
-      section.light.gif.gif--gulp(data-bespoke-state='green')
-        h1 A CHALLENGER APPEARS
-
-      section.logo.logo--gulp(data-bespoke-state='white')
+        h2 You already use it everyday
+        p So you understand how it <em>should</em> work.
 
       section
-        ul
-          li Stream-based build system
-          li Code over configuration
-          li Small, idiomatic Node modules
-          li Really simple, elegant API
+        h2 Its open
+        p Every site can be investigated to learn how things work
 
       section
-        h2.bullet Basic Gulpfile
-        pre.bullet.language-javascript
-          code.
-            var gulp = require('gulp'),
-              stylus = require('gulp-stylus'),
-              autoprefixer = require('gulp-autoprefixer');
-        pre.bullet.language-javascript
-          code.
-            gulp.task('default', function() {
-              return gulp.src('src/styles/*.styl')
-                .pipe(stylus())
-                .pipe(autoprefixer())
-                .pipe(gulp.dest('public/styles'));
-            });
+        h2 Doesn't require knowing the command line
+        p All you need is a browser.
+        p No terminal, editor, or install.
+        p CMSs make it easy to start tweaking things without setting anything up.
 
       section
-        h2.bullet Gulp tasks run from terminal
-        pre.bullet.language-bash
-          $ gulp taskname
-
-      section
-        h2.bullet Streaming Builds
-        pre.bullet.language-javascript
-          code.
-            gulp.src('src/foobar.styl') // <-- Read from FS
-
-              // In memory transforms:
-              .pipe(stylus())
-              .pipe(rename({ ext: 'css' }))
-              .pipe(autoprefixer())
-              .pipe(cssmin())
-              .pipe(header('/* Copyright 2014 */'))
-
-              .pipe(gulp.dest('dist')) // <-- Write to FS
+        h2 Tech Demo!
 
       section.light(data-bespoke-state='green')
-        h2.bullet Streams?
-        p.bullet Read the <a href="https://github.com/substack/stream-handbook">Stream Handbook</a>
-        br
-        .bullet
-          img.avatar.avatar--small(src='images/substack.png')
-          br
-          h3
-            | by 
-            a(href='https://twitter.com/substack') @substack
+        h2 Getting into the basics
 
       section
-        img.avatar(src='images/maxogden.png')
-        br
-        blockquote.
-          best part about <a href="https://twitter.com/gulpjs">@gulpjs</a> is that people are writing generic, streaming node modules that have nothing to do w/ gulp except the module name :)
-        br
+        h2 What does <em>front-end</em> mean? How's it related to <em>back-end</em>?
+
+      section
+        h2 Front-end
+        p Layout
+        p Colors
+        p Buttons
+        p Images
+        p Animation
+        p Media playback (Video/Music)
+        p Dropdowns, sliders, transparency
+
+      section
+        h2 Back-end
+        p Databases
+        p Real-time (i.e. chat, twitter feed, etc.)
+        p Login/Signup
+        p Processing forms
+        p Much scarier things...
+
+      section.gif.gif--eye.blur2
+        h2 I prefer the front-end web because I can easily see that I'm working with something
+        p Theres a thing and I'm positioning it, changing its color, or animating it.
+
+      section.light(data-bespoke-state='green')
+        h2 Basics of front-end
+        p HTML
+        p CSS
+        p Javascript
+
+      section
+        h2 <strong>HTML</strong> is the scaffolding
+
+      section
+        h2 <strong>CSS</strong> is layout and colors
+
+      section
+        h2 <strong>Javascript</strong> is for actions
+
+      section
+        h3 How simple things can be
+        pre.language-html
+           <span>&lt;html&gt;</span>
+           <span>  &lt;head&gt;</span>
+           <span>    &lt;title&gt;</span>Some Title<span>&lt;/title&gt;</span>
+           <span>  &lt;/head&gt;</span>
+           <span>  &lt;body style=&quot;background: blue&quot;&gt;</span>
+           <span>    &lt;h1 onclick=&quot;alert('hey')&quot;&gt;Hello World&lt;/h1&gt;</span>
+           <span>  &lt;/body&gt;</span>
+           <span>&lt;html&gt;</span>
+
+      section
+        h2 Tech Example!
+
+      section
+        h2 What is the <strong>DOM</strong>?
+
+      section.gif.gif--twitter.blur.faded2
+        h2 Investigate how your favorite sites work.
+        p Its a great way to learn ;p
+
+      section
+        h2 What is <strong id="js-words" >Javascript</strong>
+        p The "programming" side of the web.
+
+      section
+        h2 Javascript, jQuery, Java
+        p needs some clarification...
+
+      section
+        h2 Where the command line comes in
+        p Git
+        p Required to use some libraries
+        p Serving and Watching files
+        p Live Reload
+        p Installing Modules
+        p A bunch more reasons...
+
+      section.light(data-bespoke-state='green')
+        h2 Overview of Chrome
+        p Chrome OS
+        p Chrome Dev Tools
+
+      section
+        h2 Chrome OS
+        p cheap
+        p extendable
+        p closed
+
+      section
+        h2 Chrome Dev Tools
+        p Elements panel
+        p Console panel
+        p Sources panel
+        p Selection tool
+
+      section
+        h2 How do you compensate for Photoshop, Terminal, etc.?
+
+      section.light(data-bespoke-state='green')
+        h2 Web tools
+        p Koding
+        p Pixlr Editor
+        p JS Fiddle
+        p Codepen
+        p Stackoverflow
+
+      section
+        h3 Koding (acct required, but its free)
+        img.image(src='images/tools/koding.jpg')
         p
-          a(href='https://twitter.com/maxogden') @maxogden
-
-      section.gif.gif--gulp-api
-        h1.bullet LET'S LEARN THE GULP API
-        h2.bullet It's not too hard.
+          p
+          a(href="https://koding.com/Terminal") https://koding.com/Terminal
 
       section
-        h2.bullet gulp.task
-        pre.bullet.language-javascript
-          code.
-            gulp.task('name', ['deps'], function(done) {
-
-              return stream || promise;
-              // ...or, call done()
-
-            });
-
-      section
-        h2.bullet gulp.watch
-        pre.bullet.language-javascript
-          code.
-            gulp.watch('src/**/*.js', ['test', 'compile']);
-
-      section
-        h2.bullet gulp.src
-        h3.bullet Returns a readable stream
-        pre.bullet.language-javascript
-          code.
-            gulp.src(['src/**/*.js', 'test/spec/**/*.js'])
-
-      section
-        h2.bullet gulp.dest
-        h3.bullet Returns a "through stream"
-        pre.bullet.language-javascript
-          code.
-            gulp.src('src')
-              .pipe(...)
-              .pipe(gulp.dest('dist'));
-        br
-        p.bullet Yes, that means you can keep piping!
-
-      section.gif.gif--thats-it
-        h2.bullet task, watch, src, dest
-        h1.bullet That's it.
-
-      section.light(data-bespoke-state='green')
-        h2 But...
-        h3 How do you run all the tasks sequentially?
-
-      section.gif.gif--wrong-question
-        h1 WRONG QUESTION
-
-      section.gif.gif--orchestrator
-        h2.bullet Gulp uses <a href="https://github.com/robrich/orchestrator">Orchestrator</a>
-        h3.bullet Just specify task dependencies
-        p.bullet Tasks run with maximum concurrency
-
-      section.light(data-bespoke-state='green')
-        h2 But...
-        h3 What's coming down the pipe?
-
-      section.gif.gif--vinyl
-        h1.bullet
-          a(href='https://github.com/wearefractal/vinyl') vinyl
-        h2.bullet Virtual file objects
-
-      section.gif.gif--anger
-        h1 USING GULP IN ANGER
-
-      section
-        h1.bullet <a href="https://github.com/markdalgleish/bespoke.js">Bespoke.js</a>
-        h3.bullet Now uses Gulp instead of Grunt
-        p.bullet Which caused me to write...
-
-      section
-        h1.bullet <a href="https://github.com/markdalgleish/gulp-coveralls">gulp-coveralls</a>
-        h3.bullet Submits unit test coverage to <a href="http://coveralls.io">coveralls.io</a>
-
-      section.light(data-bespoke-state='green')
-        h2 So...
-        h3 Is Gulp ready to replace Grunt?
-
-      section.gif.gif--no
-
-      section
-        h2.bullet Well, not unless you live on the bleeding edge
-        h3.bullet The ecosystem needs a bit more time to mature
-        p.bullet First things first...
-
-      section.gif.gif--omg-plugins
-        h1.bullet OMG GULP PLUGINS
-        h2.bullet 284 and counting...
-
-      section
-        img.avatar(src='images/sindresorhus.jpg')
-        br
-        blockquote.
-          Gulp is a new, fast &amp; light, streaming build system. While evaluating it for <a href="https://twitter.com/yeoman">@yeoman</a> I created some plugins for it: <a href="https://plus.google.com/+sindresorhus/posts/ebiZPMSxVf9">http://j.mp/1fnwFpv</a>
-        br
+        h3 Pixlr Editor (no account)
+        img.image(src='images/tools/pixlr-editor.png')
         p
-          a(href='https://twitter.com/sindresorhus') @sindresorhus
-          br
-          small Dec 19, 2013
+          p
+          a(href="http://pixlr.com/editor/") http://pixlr.com/editor
 
       section
-        h1 Two weeks later...
-
-      section
-        img.avatar(src='images/sindresorhus.jpg')
-        br
-        blockquote.
-          26 <a href="https://twitter.com/gulpjs">@gulpjs</a> plugins done! <a href="https://github.com/search?l=&amp;o=desc&amp;p=1&amp;q=gulp+user%3Asindresorhus&amp;ref=advsearch&amp;s=updated&amp;type=Repositories">https://github.com/search?l=&amp;o=de…</a><br>for: <a href="https://twitter.com/search?q=%23reactjs&amp;src=hash">#reactjs</a>, mocha, webp, myth, traceur, recess, esformatter, jscs, ftp, tar, zip, &amp; more
-        br
+        h3 JS Fiddle (no account)
+        img.image(src='images/tools/js-fiddle.png')
         p
-          a(href='https://twitter.com/sindresorhus') @sindresorhus
-          br
-          small Jan 2, 2014
+          p
+          a(href="http://jsfiddle.net/") http://jsfiddle.net
+
+      section
+        h3 Codepen (no account)
+        img.image(src='images/tools/codepen.png')
+        p
+          p
+          a(href="http://codepen.io/") http://codepen.io
+
+      section
+        h3 Stack Overflow (no account)
+        img.image(src='images/tools/stack-overflow.jpg')
+        p
+          p
+          a(href="http://stackoverflow.com/") http://stackoverflow.com
+
+      section
+        h2 Going further
+        p Building Chrome Extensions
+        p Building Dev Tools Extensions
+        p Activate Dev Mode for Chrome OS
 
       section.light(data-bespoke-state='green')
-        h2 So...
-        h3 What's happening with Yeoman?
+        h2 Wrapping up
+        p Programming isnt scary
+        p You dont have to dive into command line
+        p Learn by example through your favorite sites
 
       section
-        h3.bullet There's already an official generator for Gulp
-        h1.bullet <a href="https://github.com/yeoman/generator-gulp-webapp">generator-gulp-webapp</a>
+        h1 Thank You
+        p Questions?
 
-      section.gif.gif--gulp-is-awesome
-        h1.bullet THE YEOMAN TEAM AGREES
-        h2.bullet Gulp is awesome.
-        h3.bullet (I agree too)
-
-      section.gif.gif--future
-        h1.bullet THE FUTURE
-        ul
-          li <a href="https://github.com/node-task/spec/wiki">node-task</a> spec for standardised build tasks (Grunt is on board)
-          li <a href="https://github.com/gruntjs/grunt-next">Grunt 1.0 alpha</a> uses Orchestrator! (OMG)
-          li So what's the difference? <strong>Config vs code.</strong>
-
-      section
-        h1 Thank you!
-        h3
-          a(href='https://twitter.com/markdalgleish') @markdalgleish
+      section.light(data-bespoke-state='green')
         img.avatar.avatar--small(src='images/profile.jpg')
+        h3.avatar-name
+          a(href='https://twitter.com/markdalgleish') @likethemammal
+          a(href='https://likethemammal.com')   likethemammal.com
 
-    // build:js scripts/scripts.js
+
+        // build:js scripts/scripts.js
     script(src='bower_components/bespoke.js/dist/bespoke.min.js')
     script(src='bower_components/bespoke-keys/dist/bespoke-keys.min.js')
     script(src='bower_components/bespoke-touch/dist/bespoke-touch.min.js')
