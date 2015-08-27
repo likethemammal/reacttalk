@@ -2,7 +2,11 @@
 
 // variables!
 
-primary = #24e0f3
+primary = #f32640
+primaryHeader = darken(#f32640, 10%)
+secondary = #f0f0f0
+headerSecondary = #e0e0e0
+textColor = #303030
 
 slide_width = 640px
 slide_height = 480px
@@ -174,13 +178,21 @@ pre
 // content styles
 
 body
-  background: #303030
+  background: secondary
   font-family: open sans, helvetica, arial, sans-serif
   font-weight: 300
   font-size: 18px
-  color: #f0f0f0
+  color: textColor
   .gif
-    color: rgba(255,255,255,0.8)
+    color: textColor
+    &.lightText
+      color: secondary
+      text-shadow: 0 1px rgba(0,0,0,0.6)
+      h2
+        color: secondary
+        text-shadow: 0 1px rgba(0,0,0,0.6)
+    h2
+      color: textColor
   .bespoke-slide.light
     color: rgba(0,0,0,0.5)
 
@@ -196,7 +208,7 @@ h2
   font-size: 42px
   letter-spacing: -1px
   margin-bottom: 8px
-  color: #f0f0f0
+  color: primaryHeader
   .bespoke-slide.light &
     color: rgba(0,0,0,0.6)
 
@@ -204,7 +216,7 @@ h3
   font-size: 24px
   font-weight: 300
   margin-bottom: 24px
-  color: #e0e0e0
+  color: primaryHeader
   .bespoke-slide.light &
     color: rgba(0,0,0,0.5)
 
@@ -244,7 +256,7 @@ a
   width: 120px
   height: 120px
   border-radius: 120px
-  box-shadow: 1px 1px 5px rgba(0,0,0,0.4)
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
   &--small
     width: 80px
     height: 80px
@@ -254,7 +266,7 @@ a
 
 .logo
   background-position: center
-  background-repeat: no-repeat
+  background-repeat: no-repeat;
   &--gulp
     background-size: 25%
     background-image: url(../images/gulp.png)
@@ -272,18 +284,18 @@ a
   background-repeat: no-repeat
 
 .gif
-  &--fight:before
-    background-image: url(../images/gif/fight.gif)
-  &--frustration:before
-    background-image: url(../images/gif/frustration.gif)
-  &--code:before
-    background-image: url(../images/code.jpg)
-  &--eye:before
-    background-image: url(../images/gif/eye.gif)
-  &--twitter:before
-    background-image: url(../images/twitter.png)
-  &--chrome:before
-    background-image: url(../images/chrome.jpg)
+  &--gmail:before
+    background-image: url(../images/gmail.png);
+  &--youtube:before
+    background-image: url(../images/youtube.jpg);
+  &--backbone:before
+    background-image: url(../images/backbone.jpg);
+  &--airplane:before
+    background-image: url(../images/airplane.jpg);
+  &--car:before
+    background-image: url(../images/car.jpg);
+  &--amoeba:before
+    background-image: url(../images/amoeba.png);
 
 .tiny-subheader
   font-size: 24px;
@@ -304,6 +316,9 @@ a
 .faded3:before
   opacity: 0.1
 
+.darken
+  background-color: black
+
 .image
   height: 294px;
 
@@ -313,3 +328,7 @@ a
   right: 0;
   left: 0;
   padding-bottom: 20px;
+
+.diagram {
+  max-height: 100%;
+}

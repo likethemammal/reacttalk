@@ -3,7 +3,7 @@ html
   head
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
-    title The Accessibility of Programming
+    title React and Flux... and a little Redux
 
     link(href='styles/open-sans-font.css', rel='stylesheet', type='text/css')
 
@@ -17,246 +17,300 @@ html
     article
 
       section
-        h1 The Accessibility of Programming
-        span.tiny-subheader why is it so scary to learn?
+        h1 React and Flux... and a little Redux
+        span.tiny-subheader Modern web app technology
         img.avatar.avatar--small(src='images/profile.jpg')
         h3.avatar-name
           a(href='https://twitter.com/markdalgleish') Chris Dolphin   @likethemammal
 
-        a.floating-link(href="http://goo.gl/l1ehqI") http://goo.gl/l1ehqI
-
-      section
-        img.avatar(src='images/obama.jpg')
-        br
-        blockquote.
-          ...Don't just buy a new video game, <strong>make one</strong>. Don't just download the latest app, <strong>help design it</strong>. Don't just play on your phone, <strong>program it</strong>...No one's born a computer scientist...
-        br
-        p
-          a(href='http://www.barackobama.com/') Barack Obama
-          br
-          small Dec 2013
-
+        a.floating-link(href="http://goo.gl/7SQD6V") Slides: http://goo.gl/7SQD6V
 
       section.light(data-bespoke-state='green')
         h2 Goals of this talk
-        p Why its so scary.
-        p How its not magic.
-        p How easy it can be.
-
-      section.gif.gif--frustration.blur
-        h2 Starting in the wrong place
-        span PHP
-        span HTML
-        span Python
-        span Ruby
-        span Javascript
-        span Go
-        span Java
+        p Understandable to anyone who wants to listen.
+        p No code examples! Cus fuck that.
+        p Explain how web apps work.
+        p Discuss the direction JS web apps are going.
 
       section
-        h2 Why is learning so <strong>hard</strong>?
+        h2 What this talk is about
+        p Overview of the Single Page App (SPA)
+        p Overview of MVC.
+        p Overview of React and Flux, and how they're new and different.
+        p A light sprinkling of the Redux framework.
 
       section
-        h2 <strong>Its hard</strong> to get started
-        p Install
-        p Setup
-        p Assumptions
-        p Acronyms
-        p etc
+          h2 What is a Web App?
 
       section
-        h2 <strong>Its hard</strong> to practically apply what you've learned
-        p For Android development you need an Android device
-        p For Back-end development you need a server
-        p It doesnt have to be this hard.
-
-      section.light(data-bespoke-state='green')
-        h2 Why is the front-end web a good place to start?
-
-      section
-        h2 You already use it everyday
-        p So you understand how it <em>should</em> work.
-
-      section
-        h2 Its open
-        p Every site can be investigated to learn how things work
-
-      section
-        h2 Doesn't require knowing the command line
-        p All you need is a browser.
-        p No terminal, editor, or install.
-        p CMSs make it easy to start tweaking things without setting anything up.
-
-      section
-        h2 Tech Demo!
-
-      section.light(data-bespoke-state='green')
-        h2 Getting into the basics
-
-      section
-        h2 What does <em>front-end</em> mean? How's it related to <em>back-end</em>?
-
-      section
-        h2 Front-end
-        p Layout
-        p Colors
-        p Buttons
-        p Images
-        p Animation
-        p Media playback (Video/Music)
-        p Dropdowns, sliders, transparency
-
-      section
-        h2 Back-end
-        p Databases
-        p Real-time (i.e. chat, twitter feed, etc.)
-        p Login/Signup
-        p Search
-        p Processing forms
-        p Much scarier things...
-
-      section.gif.gif--eye.blur2
-        h2 I prefer the front-end web because I can easily see that I'm working with something
-        p Theres a thing and I'm positioning it, changing its color, or animating it.
-
-      section.light(data-bespoke-state='green')
-        h2 Basics of front-end
-        p HTML
-        p CSS
-        p Javascript
-
-      section
-        h2 <strong>HTML</strong> is the scaffolding
-
-      section
-        h2 <strong>CSS</strong> is layout and colors
-
-      section
-        h2 <strong>Javascript</strong> is for actions
-
-      section
-        h3 How simple things can be
-        pre.language-html
-           <span>&lt;html&gt;</span>
-           <span>  &lt;head&gt;</span>
-           <span>    &lt;title&gt;</span>Some Title<span>&lt;/title&gt;</span>
-           <span>  &lt;/head&gt;</span>
-           <span>  &lt;body style=&quot;background: blue&quot;&gt;</span>
-           <span>    &lt;h1 onclick=&quot;alert('hey')&quot;&gt;Hello World&lt;/h1&gt;</span>
-           <span>  &lt;/body&gt;</span>
-           <span>&lt;html&gt;</span>
-
-      section
-        h2 Tech Example!
-
-      section
-        h2 What is the <strong>DOM</strong>?
-
-      section.gif.gif--twitter.blur.faded3
-        h2 Investigate how your favorite sites work.
-        p Its a great way to learn ;p
-
-      section
-        h2 What is <strong id="js-words" >Javascript</strong>
-        p The "programming" side of the web.
-
-      section
-        h2 Javascript, jQuery, Java
-        p needs some clarification...
-
-      section
-        h2 Where the command line comes in
-        p Git
-        p Required to use some libraries
-        p Serving and Watching files
-        p Live Reload
-        p Installing Modules
-        p A bunch more reasons...
-
-      section.light(data-bespoke-state='green')
-        h2 Overview of Chrome
-        p Chrome OS
-        p Chrome Dev Tools
-
-      section.gif.gif--chrome.blur.faded2
-        h2 Chrome OS
-        p cheap
-        p quick
-        p extendable
-        p closed
-
-      section
-        h2 <span id="chrome">Chrome</span> Dev Tools
-        p Elements panel
-        p Console panel
-        p Sources panel
-        p Selection tool
-
-      section
-        h2 How do you compensate for Photoshop, Terminal, etc.?
-
-      section.light(data-bespoke-state='green')
-        h2 Web tools
-        p Koding
-        p Pixlr Editor
-        p JS Fiddle
-        p Codepen
-        p Stackoverflow
-
-      section
-        h3 Koding (acct required, but its free)
-        img.image(src='images/tools/koding.jpg')
+        blockquote.
+          "...a website is defined by its <strong>content</strong>, while a web application is defined by its <strong>interaction with the user</strong>."
+        br
+        p <em>Web site is mostly <strong>static content</strong></em>
+        p <em>Web app requires <strong>user input</strong> and <strong>data processing</strong></em>
+        br
+        blockquote.
+          "...For example, a news site would be a 'website', but a spreadsheet or a collaborative calendar would be web 'applications'."
+        br
         p
-          p
-          a(href="https://koding.com/Terminal") https://koding.com/Terminal
+          a(href='http://stackoverflow.com/a/8694944/2687479') Kerrek SB
+          br
+          small Stackoverflow, Jan 2012
+
+      section.gif.gif--gmail.blur.faded
+        h2 Examples of web apps
+        p Gmail
+        p Google Calender
+        p Facebook
+        p Meetup.com
+        p Instagram
+        p okcupid
 
       section
-        h3 Pixlr Editor (no account)
-        img.image(src='images/tools/pixlr-editor.png')
-        p
-          p
-          a(href="http://pixlr.com/editor/") http://pixlr.com/editor
+        h2 What is a Single Page App or <strong>SPA</strong>?
 
       section
-        h3 JS Fiddle (no account)
-        img.image(src='images/tools/js-fiddle.png')
-        p
-          p
-          a(href="http://jsfiddle.net/") http://jsfiddle.net
+        p A <strong>single</strong> HTML page
+        p No reload between page navigation
+        p Logic is run in the browser (not the server) using Javascript
+        p Updates the page as users interact with it (using Ajax, or XHR)
+        p Encourages smooth transitions between actions
 
-      section
-        h3 Codepen (no account)
-        img.image(src='images/tools/codepen.png')
-        p
-          p
-          a(href="http://codepen.io/") http://codepen.io
-
-      section
-        h3 Stack Overflow (no account)
-        img.image(src='images/tools/stack-overflow.jpg')
-        p
-          p
-          a(href="http://stackoverflow.com/") http://stackoverflow.com
-
-      section
-        h2 Going further
-        p Building Chrome Extensions
-        p Building Dev Tools Extensions
-        p Activate Dev Mode for Chrome OS
+      section.gif.gif--youtube.blur.lightText
+        h2 Examples of SPAs
+        p Youtube
+        p Gmail
+        p Google Calender
+        p Facebook
 
       section.light(data-bespoke-state='green')
-        h2 Wrapping up
-        p Programming isnt scary
-        p You dont have to dive into command line
-        p Learn by example through your favorite sites
+        h2 How are SPAs built?
+
+      section
+        h2 MVC or <strong>M</strong>odel <strong>V</strong>iew <strong>C</strong>ontroller
+        p A method of organizing your app's logic
+
+      section
+        h2 The Model (M) stores and processes data
+        p Is the user logged in?
+        p What are the latest posts?
+        p Has this video been watched?
+
+      section
+        h2 The View (V) handles what the user can see
+        p (for web apps, this is the DOM)
+        p Is the user logged in? Then show their profile image.
+        p Has this video been watched? Display the "watched" icon.
+        p Is the sidebar open?
+
+      section
+        h2 The Controller (C) manages user interaction
+        p Did the user like this video? Then, tell the Model
+        p Was the submit button clicked? Tell the Model to process the form.
+
+      section.light(data-bespoke-state='green')
+        h2 Some real world context
+
+      section.gif.gif--airplane.blur.lightText.darken.faded
+        h2 Airplane
+        p <strong>C</strong> would be dials and switches
+        p <strong>V</strong> would be meters and read-outs
+        p <strong>M</strong> would be internals connected to the engine, etc.
+
+      section.gif.gif--car.blur.lightText.darken.faded
+        h2 Car
+        p <strong>C</strong> would be the gas pedal
+        p <strong>V</strong> would be the speedometer
+        p <strong>M</strong> would be the engine
+
+      section.gif.gif--amoeba.lightText
+        h2 Amoeba
+        p <strong>C</strong> would be her feelers
+        p <strong>V</strong> would be her color and smile
+        p <strong>M</strong> would be her organs
+
+      section
+        h2 The View and Controller are sometimes merged.
+        p MV*
+        p MVV
+        p etc.
+
+      section
+        h2 MVC Javascript frameworks help
+        p Backbone (with Jquery)
+        p Angular
+        p Polymer
+
+      section
+        h2 The big problem with MVC? Managing State.
+
+      section.light(data-bespoke-state='green')
+        h2 What is state?
+        p The <strong>state</strong> of the app at any given time.
+        p Is the sidebar open?
+        p Is the confirmation window visible?
+
+      section
+        h2 MVC is Bi-directional data flow
+        p Models talk to Views
+        p Views talk to Models
+        p What if two views change a model at the same time?
+        p What is the <strong>true</strong> state of things?
+
+      section
+        h2 Bi-directional data flow
+        img.diagram(src="images/diagrams/mvc-diagram.png")
+
+      section.light(data-bespoke-state='green')
+        h2 React
+
+      section
+        h2 Short Video!
+        p
+          a(href='http://code.tutsplus.com/courses/getting-started-with-reactjs/lessons/react-is-different') "React is Different"
+
+      section
+        h2 What is React?
+        p A JS library, The V in MVC
+        p Alternative to jQuery in most cases
+        p Helps manage state with the Virtual DOM
+        p Easily understandable components through JSX
+
+      section
+        h2 As a jQuery replacement
+        p DOM Manipulation
+        p DOM Events (onClick, onChange, etc.)
+        p Faster at updating the DOM with the Virtual DOM
+        p jQuery plugins with "Lifecycle functions"
+
+      section
+        h2 The Virtual DOM
+        p Batches changes to the DOM, one change at a time
+        p All changes are reflected all at once
+        p Don't have to worry about the bootneck of the DOM
+        p Helps manage state, <strong>"one source of truth"</strong>
+
+      section
+        h2 JSX
+        p Alternative to keeping HTML and JS separate
+        p More understandable components
+        p Readable to designers
+        p <em>(Takes some getting used to)</em>
+        p <em>(Requires transpiling/compiling)</em>
+
+      section
+        h2 React makes app development easy
+
+      section.light(data-bespoke-state='green')
+        h2 Flux
+        p Rethinking MVC
+
+      section
+        h2 What is Flux?
+        p <strong>Methodology</strong>, like MVC, not an implementation
+        p Created by Facebook
+        p Uni-directional data flow
+
+      section
+        h2 What's wrong with MVC's bi-directional data flow?
+        p Multiple Views can talk to multiple Models, and vice-versa
+        p Everyone can talk at once
+        p No idea what the <strong>true</strong> of things is
+
+      section
+        h2 How does Flux solve this problem?
+
+      section
+        h2 Uni-directional data flow
+        img.diagram(src="images/diagrams/flux-diagram.png")
+
+      section
+        h2 Parts of Flux
+        p <strong>Views</strong> are still Views
+        p <strong>Stores</strong> are like Models (data processing, state)
+        p <strong>Dispatcher</strong> handles communication
+        p Everything happens through <strong>Actions</strong>
+
+      section
+        h2 this is the same diagram as before
+      img.diagram(src="images/diagrams/flux-diagram.png")
+
+      section
+        h2 How Flux works
+        p Views listen to Stores for data (source of truth)
+        p Views or Stores create Actions (USER_SIGNIN, SIDEBAR_CLOSE, etc.)
+        p Dispatcher recieves <em>all</em> Actions and tells <em>all</em> Stores
+        p Stores change only if they care to, if not, no biggy
+
+      section
+        h2 Benefits of Flux
+        p One source of truth
+        p Everything recieves changes at once, Views update all at once
+        p Works great with React
+        p Simple, easy to think about
+
+      section
+        h2 Some popular Flux implementations
+        p Fluxxor
+          a(href='http://fluxxor.com') <span> </span>  (fluxxor.com)
+        p Reflux
+          a(href='https://github.com/reflux/refluxjs') <span> </span> (Github)
+        p Flummox
+          a(href='http://acdlite.github.io/flummox') <span> </span> (Github)
+
+      section
+        h2 Thats some of the newest developments in web apps
+        p Whats the future look like?
+
+      section.light(data-bespoke-state='green')
+        h2 Redux
+        a(href='http://rackt.github.io/redux/') http://rackt.github.io/redux/
+
+      section
+        h2 What is Redux?
+        p A JS library, kinda implements Flux
+        p Just hit version 1.0
+        p Works great with React
+        p Several benifits beyond Flux
+        p <em>(Influenced by Flux, Elm, Rx, etc.)</em>
+
+      section
+        h2 Whats the difference?
+        p Uni-directional data flow, but only one Store
+        p Store only keeps state, doesn't process data
+        p Actions are processed by simple pure functions, <strong>Reducers</strong>
+        p Encourages use of ES6 / ES7 (if you're into that)
+
+      section
+        h2 How are these things beneficial?
+        p Even easier to manage state, one Store (and source of truth)
+        p Reducers provided a bunch of functionality for free:
+        p Undo/Redo or Rewind/Fastforward
+        p Time travel
+        p Record/Replay
+
+      section
+        h2 Is it worth it? Up to you
+
+      section.light(data-bespoke-state='green')
+        h2 What we covered
+        p What web apps are
+        p How web apps and SPAs are built
+        p Development with MVC
+        p How React is different
+        p How Flux is awesome
+        p Touched on the future, with Redux
 
       section
         h1 Thank You
         p Questions?
+        br
+        br
+        p Slides: http://goo.gl/7SQD6V
 
       section.light(data-bespoke-state='green')
         h2
-          a(href="http://goo.gl/l1ehqI") http://goo.gl/l1ehqI
+          a(href="http://goo.gl/7SQD6V") http://goo.gl/7SQD6V
         br
         img.avatar.avatar--small(src='images/profile.jpg')
         h3.avatar-name
@@ -264,7 +318,7 @@ html
           br
           a(href='https://likethemammal.com')   likethemammal.com
 
-        p Always looking for freelance work
+        p Always looking for new projects
           br
           a(href="mailto:dolphin@likethemammal.com") dolphin@likethemammal.com
 
