@@ -43,7 +43,7 @@ article.bespoke-parent {
   }
 }
 article.bespoke-parent.green {
-  background: #f32640;
+  background: #f43c53;
 }
 article.bespoke-parent.white {
   background: #fff;
@@ -280,7 +280,7 @@ body .gif h2 {
   color: #303030;
 }
 body .bespoke-slide.light {
-  color: rgba(0,0,0,0.5);
+  color: rgba(0,0,0,0.75);
 }
 h1 {
   font-size: 65px;

@@ -4,6 +4,7 @@
 
 primary = #f32640
 primaryHeader = darken(#f32640, 10%)
+primaryBG = lighten(#f32640, 10%)
 secondary = #f0f0f0
 headerSecondary = #e0e0e0
 textColor = #303030
@@ -57,7 +58,7 @@ article
       position: static
 
     &.green
-      background: primary
+      background: primaryBG
     &.white
       background: white
 
@@ -194,7 +195,7 @@ body
     h2
       color: textColor
   .bespoke-slide.light
-    color: rgba(0,0,0,0.5)
+    color: rgba(0,0,0,0.75)
 
 h1
   font-size: 65px
