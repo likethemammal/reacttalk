@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>React and Flux... and a little Redux</title>
+    <link href="styles/open-sans-font.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="styles/styles.css"/>
+  </head>
+  <body>
+    <article>
+      <section>
+        <h1>React and Flux... and a little Redux</h1><span class="tiny-subheader">Modern web app technology</span><img src="images/profile.jpg" class="avatar avatar--small">
+        <h3 class="avatar-name"><a href="https://twitter.com/markdalgleish">Chris Dolphin   @likethemammal</a></h3><a href="http://goo.gl/7SQD6V" class="floating-link">Slides: http://goo.gl/7SQD6V</a>
+      </section>
+      <section data-bespoke-state="green" class="light">
+        <h2>Goals of this talk</h2>
+        <p>Understandable to anyone who wants to listen.</p>
+        <p>No code examples! Cus fuck that.</p>
+        <p>Explain how web apps work.</p>
+        <p>Discuss the direction JS web apps are going.</p>
+      </section>
+      <section>
+        <h2>What this talk is about</h2>
+        <p>Overview of the Single Page App (SPA)</p>
+        <p>Overview of MVC.</p>
+        <p>Overview of React and Flux, and how they're new and different.</p>
+        <p>A light sprinkling of the Redux framework.</p>
+      </section>
+      <section>
+        <h2>What is a Web App?</h2>
+      </section>
+      <section>
+        <blockquote>"...a website is defined by its <strong>content</strong>, while a web application is defined by its <strong>interaction with the user</strong>."</blockquote><br>
+        <p><em>Web site is mostly <strong>static content</strong></em></p>
+        <p><em>Web app requires <strong>user input</strong> and <strong>data processing</strong></em></p><br>
+        <blockquote>"...For example, a news site would be a 'website', but a spreadsheet or a collaborative calendar would be web 'applications'."</blockquote><br>
+        <p><a href="http://stackoverflow.com/a/8694944/2687479">Kerrek SB</a><br><small>Stackoverflow, Jan 2012</small></p>
+      </section>
+      <section class="gif gif--gmail blur faded">
+        <h2>Examples of web apps</h2>
+        <p>Gmail</p>
+        <p>Google Calender</p>
+        <p>Facebook</p>
+        <p>Meetup.com</p>
+        <p>Instagram</p>
+        <p>okcupid</p>
+      </section>
+      <section>
+        <h2>What is a Single Page App or <strong>SPA</strong>?</h2>
+      </section>
+      <section>
+        <p>A <strong>single</strong> HTML page</p>
+        <p>No reload between page navigation</p>
+        <p>Logic is run in the browser (not the server) using Javascript</p>
+        <p>Updates the page as users interact with it (using Ajax, or XHR)</p>
+        <p>Encourages smooth transitions between actions</p>
+      </section>
+      <section class="gif gif--youtube blur lightText">
+        <h2>Examples of SPAs</h2>
+        <p>Youtube</p>
+        <p>Gmail</p>
+        <p>Google Calender</p>
+        <p>Facebook</p>
+      </section>
+      <section data-bespoke-state="green" class="light">
+        <h2>How are SPAs built?</h2>
+      </section>
+      <section>
+        <h2>MVC or <strong>M</strong>odel <strong>V</strong>iew <strong>C</strong>ontroller</h2>
+        <p>A method of organizing your app's logic</p>
+      </section>
+      <section>
+        <h2>The Model (M) stores and processes data</h2>
+        <p>Is the user logged in?</p>
+        <p>What are the latest posts?</p>
+        <p>Has this video been watched?</p>
+      </section>
+      <section>
+        <h2>The View (V) handles what the user can see</h2>
+        <p>(for web apps, this is the DOM)</p>
+        <p>Is the user logged in? Then show their profile image.</p>
+        <p>Has this video been watched? Display the "watched" icon.</p>
+        <p>Is the sidebar open?</p>
+      </section>
+      <section>
+        <h2>The Controller (C) manages user interaction</h2>
+        <p>Did the user like this video? Then, tell the Model</p>
+        <p>Was the submit button clicked? Tell the Model to process the form.</p>
+      </section>
+      <section data-bespoke-state="green" class="light">
+        <h2>Some real world context</h2>
+      </section>
+      <section class="gif gif--airplane blur lightText darken faded">
+        <h2>Airplane</h2>
+        <p><strong>C</strong> would be dials and switches</p>
+        <p><strong>V</strong> would be meters and read-outs</p>
+        <p><strong>M</strong> would be internals connected to the engine, etc.</p>
+      </section>
+      <section class="gif gif--car blur lightText darken faded">
+        <h2>Car</h2>
+        <p><strong>C</strong> would be the gas pedal</p>
+        <p><strong>V</strong> would be the speedometer</p>
+        <p><strong>M</strong> would be the engine</p>
+      </section>
+      <section class="gif gif--amoeba lightText">
+        <h2>Amoeba</h2>
+        <p><strong>C</strong> would be her feelers</p>
+        <p><strong>V</strong> would be her color and smile</p>
+        <p><strong>M</strong> would be her organs</p>
+      </section>
+      <section>
+        <h2>The View and Controller are sometimes merged.</h2>
+        <p>MV*</p>
+        <p>MVV</p>
+        <p>etc.</p>
+      </section>
+      <section>
+        <h2>MVC Javascript frameworks help</h2>
+        <p>Backbone (with Jquery)</p>
+        <p>Angular</p>
+        <p>Polymer</p>
+      </section>
+      <section>
+        <h2>The big problem with MVC? Managing State.</h2>
+      </section>
+      <section data-bespoke-state="green" class="light">
+        <h2>What is state?</h2>
+        <p>The <strong>state</strong> of the app at any given time.</p>
+        <p>Is the sidebar open?</p>
+        <p>Is the confirmation window visible?</p>
+      </section>
+      <section>
+        <h2>MVC is Bi-directional data flow</h2>
+        <p>Models talk to Views</p>
+        <p>Views talk to Models</p>
+        <p>What if two views change a model at the same time?</p>
+        <p>What is the <strong>true</strong> state of things?</p>
+      </section>
+      <section>
+        <h2>Bi-directional data flow</h2><img src="images/diagrams/mvc-diagram.png" class="diagram">
+      </section>
+      <section data-bespoke-state="green" class="light">
+        <h2>React</h2>
+      </section>
+      <section>
+        <h2>Short Video!</h2>
+        <p><a href="http://code.tutsplus.com/courses/getting-started-with-reactjs/lessons/react-is-different">"React is Different"</a></p>
+      </section>
+      <section>
+        <h2>What is React?</h2>
+        <p>A JS library, The V in MVC</p>
+        <p>Alternative to jQuery in most cases</p>
+        <p>Helps manage state with the Virtual DOM</p>
+        <p>Easily understandable components through JSX</p>
+      </section>
+      <section>
+        <h2>As a jQuery replacement</h2>
+        <p>DOM Manipulation</p>
+        <p>DOM Events (onClick, onChange, etc.)</p>
+        <p>Faster at updating the DOM with the Virtual DOM</p>
+        <p>jQuery plugins with "Lifecycle functions"</p>
+      </section>
+      <section>
+        <h2>The Virtual DOM</h2>
+        <p>Batches changes to the DOM, one change at a time</p>
+        <p>All changes are reflected all at once</p>
+        <p>Don't have to worry about the bootneck of the DOM</p>
+        <p>Helps manage state, <strong>"one source of truth"</strong></p>
+      </section>
+      <section>
+        <h2>JSX</h2>
+        <p>Alternative to keeping HTML and JS separate</p>
+        <p>More understandable components</p>
+        <p>Readable to designers</p>
+        <p><em>(Takes some getting used to)</em></p>
+        <p><em>(Requires transpiling/compiling)</em></p>
+      </section>
+      <section>
+        <h2>React makes app development easy</h2>
+      </section>
+      <section data-bespoke-state="green" class="light">
+        <h2>Flux</h2>
+        <p>Rethinking MVC</p>
+      </section>
+      <section>
+        <h2>What is Flux?</h2>
+        <p><strong>Methodology</strong>, like MVC, not an implementation</p>
+        <p>Created by Facebook</p>
+        <p>Uni-directional data flow</p>
+      </section>
+      <section>
+        <h2>What's wrong with MVC's bi-directional data flow?</h2>
+        <p>Multiple Views can talk to multiple Models, and vice-versa</p>
+        <p>Everyone can talk at once</p>
+        <p>No idea what the <strong>true</strong> of things is</p>
+      </section>
+      <section>
+        <h2>How does Flux solve this problem?</h2>
+      </section>
+      <section>
+        <h2>Uni-directional data flow</h2><img src="images/diagrams/flux-diagram.png" class="diagram">
+      </section>
+      <section>
+        <h2>Parts of Flux</h2>
+        <p><strong>Views</strong> are still Views</p>
+        <p><strong>Stores</strong> are like Models (data processing, state)</p>
+        <p><strong>Dispatcher</strong> handles communication</p>
+        <p>Everything happens through <strong>Actions</strong></p>
+      </section>
+      <section>
+        <h2>this is the same diagram as before</h2>
+      </section><img src="images/diagrams/flux-diagram.png" class="diagram">
+      <section>
+        <h2>How Flux works</h2>
+        <p>Views listen to Stores for data (source of truth)</p>
+        <p>Views or Stores create Actions (USER_SIGNIN, SIDEBAR_CLOSE, etc.)</p>
+        <p>Dispatcher recieves <em>all</em> Actions and tells <em>all</em> Stores</p>
+        <p>Stores change only if they care to, if not, no biggy</p>
+      </section>
+      <section>
+        <h2>Benefits of Flux</h2>
+        <p>One source of truth</p>
+        <p>Everything recieves changes at once, Views update all at once</p>
+        <p>Works great with React</p>
+        <p>Simple, easy to think about</p>
+      </section>
+      <section>
+        <h2>Some popular Flux implementations</h2>
+        <p>Fluxxor<a href="http://fluxxor.com"><span> </span>  (fluxxor.com)</a></p>
+        <p>Reflux<a href="https://github.com/reflux/refluxjs"><span> </span> (Github)</a></p>
+        <p>Flummox<a href="http://acdlite.github.io/flummox"><span> </span> (Github)</a></p>
+      </section>
+      <section>
+        <h2>Thats some of the newest developments in web apps</h2>
+        <p>Whats the future look like?</p>
+      </section>
+      <section data-bespoke-state="green" class="light">
+        <h2>Redux</h2><a href="http://rackt.github.io/redux/">http://rackt.github.io/redux/</a>
+      </section>
+      <section>
+        <h2>What is Redux?</h2>
+        <p>A JS library, kinda implements Flux</p>
+        <p>Just hit version 1.0</p>
+        <p>Works great with React</p>
+        <p>Several benifits beyond Flux</p>
+        <p><em>(Influenced by Flux, Elm, Rx, etc.)</em></p>
+      </section>
+      <section>
+        <h2>Whats the difference?</h2>
+        <p>Uni-directional data flow, but only one Store</p>
+        <p>Store only keeps state, doesn't process data</p>
+        <p>Actions are processed by simple pure functions, <strong>Reducers</strong></p>
+        <p>Encourages use of ES6 / ES7 (if you're into that)</p>
+      </section>
+      <section>
+        <h2>How are these things beneficial?</h2>
+        <p>Even easier to manage state, one Store (and source of truth)</p>
+        <p>Reducers provided a bunch of functionality for free:</p>
+        <p>Undo/Redo or Rewind/Fastforward</p>
+        <p>Time travel</p>
+        <p>Record/Replay</p>
+      </section>
+      <section>
+        <h2>Is it worth it? Up to you</h2>
+      </section>
+      <section data-bespoke-state="green" class="light">
+        <h2>What we covered</h2>
+        <p>What web apps are</p>
+        <p>How web apps and SPAs are built</p>
+        <p>Development with MVC</p>
+        <p>How React is different</p>
+        <p>How Flux is awesome</p>
+        <p>Touched on the future, with Redux</p>
+      </section>
+      <section>
+        <h1>Thank You</h1>
+        <p>Questions?</p><br><br>
+        <p>Slides: http://goo.gl/7SQD6V</p>
+      </section>
+      <section data-bespoke-state="green" class="light">
+        <h2><a href="http://goo.gl/7SQD6V">http://goo.gl/7SQD6V</a></h2><br><img src="images/profile.jpg" class="avatar avatar--small">
+        <h3 class="avatar-name"><a href="https://twitter.com/markdalgleish">@likethemammal</a><br><a href="https://likethemammal.com">  likethemammal.com</a></h3>
+        <p>Always looking for new projects<br><a href="mailto:dolphin@likethemammal.com">dolphin@likethemammal.com</a></p>
+        <script src="scripts/scripts.js"></script>
+  </body>
+</html>
